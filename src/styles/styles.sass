@@ -1,0 +1,217 @@
+$primary_font_size: 24px
+
+%montserrat
+  font-family: 'Montserrat', sans-serif
+
+@function rem-translate($px)
+  $rem: $px / $primary_font_size
+  @return #{$rem}rem
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html
+  font-size: 24px
+
+.main_container
+  display: flex
+  flex-direction: column
+  width: rem-translate(1440px)
+  height: rem-translate(785px)
+  .bmw_container
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+    margin-top: rem-translate(100px)
+    .bmw_image
+      position: relative
+      display: flex
+      width: rem-translate(760px)
+      height: rem-translate(540px)
+      .fluid-img
+        width: rem-translate(760px)
+        height: rem-translate(540px)
+        z-index: 1
+      .white_rectangle
+        width: rem-translate(120px)
+        height: rem-translate(90px)
+        background-color: white
+        z-index: 2
+        position: absolute
+        bottom: 0
+        right: 0
+    .bmw_options
+      display: flex
+      flex-direction: column
+      width: rem-translate(481px)
+      margin-left: rem-translate(119px)
+
+.bmw_options_description
+  margin-top: rem-translate(36px)
+  .bmw_options_description_text
+    @extend %montserrat
+    font-weight: 400
+    color: #4F4F4F
+    font-size: rem-translate(14px)
+    line-height: rem-translate(21px)
+
+.bmw_options_techParams
+  margin-top: rem-translate(30px)
+  flex-wrap: wrap
+  display: flex
+  .tech_params_list_item
+    width: 49%
+  &>.tech_params_list_item:nth-child(3)
+    padding-top: rem-translate(21px)
+    padding-bottom: rem-translate(21px)
+  &>.tech_params_list_item:nth-child(4)
+    padding-top: rem-translate(21px)
+    padding-bottom: rem-translate(21px)
+
+
+.bmw_options_header_text
+  @extend %montserrat
+  font-weight: 600
+  color: #333333
+  font-size: rem-translate(40px)
+
+.bmw_list_header,.bmw_list_item
+  @extend %montserrat
+  font-size: rem-translate(13px)
+
+.bmw_list_header
+  color: #333333
+
+.bmw_list_item
+  color: #4F4F4F
+.bmw_options_buy
+  display: flex
+  justify-content: center
+.buy_btn
+  @extend %montserrat
+  position: relative
+  font-weight: 400
+  font-size: rem-translate(18px)
+  width: rem-translate(320px)
+  height: rem-translate(60px)
+  color: #ffffff
+  background: linear-gradient(90deg, #EB5757 0%, #E62887 100%)
+  transform: matrix(0.98, 0, -0.18, 1, 0, 0)
+  box-shadow: 0 5px 15px rgba(230, 40, 135, 0.5)
+  border: none
+  cursor: pointer
+  margin-top: rem-translate(51px)
+  margin-left: rem-translate(130px)
+
+.buy_btn:focus
+  outline: none
+
+.buy_btn:after
+  content: ''
+  position: absolute
+  @extend %montserrat
+  font-weight: 400
+  font-size: rem-translate(18px)
+  width: rem-translate(320px)
+  height: rem-translate(60px)
+  color: #ffffff
+  background: linear-gradient(90deg, #E62887 0%, #EB5757 100%)
+  box-shadow: 0 5px 15px rgba(230, 40, 135, 0.5)
+  opacity: 0
+  left: 0
+  top: 0
+  border: none
+  cursor: pointer
+  transition: opacity 0.5s ease-out
+  z-index: 2
+
+.buy_btn:hover:after
+  opacity: 1
+
+.button_text
+  position: relative
+  z-index: 3
+  //@extend %montserrat
+  //font-weight: 400
+  //font-size: rem-translate(18px)
+
+//-----------------------------------------------------BMW_slider
+
+.bmw_slider
+  margin-bottom: rem-translate(15px)
+  width: rem-translate(760px)
+  display: flex
+  .bmw_slider_image
+    width: 25%
+    height: rem-translate(120px)
+    opacity: .5
+
+.bmw_slider_image:nth-child(1)
+  opacity: 1
+
+.bmw_slider_image:hover
+  transition: 0.4s
+  opacity: 1
+
+//--------------------------------------------------bmw_company_description
+.bmw_company_description
+  width: 100%
+  height: rem-translate(615px)
+  display: flex
+  //background-color: #4F4F4F
+
+.bmw_company_logo_container
+  width: rem-translate(600px)
+  .bmw_company_logo_bottom
+    width: 100%
+    height: rem-translate(115px)
+    background-color: #ffffff
+  .bmw_company_logo
+    width: 100%
+    height: rem-translate(500px)
+    background: linear-gradient(0deg, #2F3B47 0%, #435465 100%)
+    .bmw_company_picture_container
+      display: flex
+      justify-content: center
+      padding: 11.04rem 0 6.16rem 0
+      .bmw_picture
+        height: rem-translate(87px)
+        width: rem-translate(87px)
+        margin-right: rem-translate(31px)
+
+.about_bmw_header, .about_bmw_model
+  @extend %montserrat
+  font-weight: 600
+  color: #ffffff
+
+.about_bmw_container
+  display: flex
+  flex-direction: column
+  .about_bmw_header
+    font-size: rem-translate(16px)
+    line-height: rem-translate(24px)
+  .about_bmw_model
+    font-size: rem-translate(35px)
+    line-height: rem-translate(38px)
+
+.bmw_company_description_container
+  width: rem-translate(840px)
+  background: linear-gradient(0deg, #2F3B47 0%, #435465 100%)
+  .bmw_company_description_top
+    width: 100%
+    height: rem-translate(115px)
+    background-color: #ffffff
+  .bmw_company_text_container
+    width: 100%
+    .bmw_company_description_text
+      @extend %montserrat
+      width: rem-translate(600px)
+      height: rem-translate(200px)
+      font-weight: 400
+      font-size: rem-translate(14px)
+      line-height: rem-translate(21px)
+      color: #ffffff
+      margin: 3.45rem 5rem 8.2rem 5rem
+
